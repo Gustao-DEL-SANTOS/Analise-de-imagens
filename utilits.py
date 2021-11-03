@@ -1,7 +1,7 @@
 import cv2 as cv
 from matplotlib import pyplot as plt
 import numpy as np
-
+from PIL import Image, ImageFilter
 
 
 data_in = 'assets\input'
@@ -41,13 +41,53 @@ def filtro_de_gabro(img_name):
 
 
 
+def open_img(img_name):
+    # Abrindo a Imagem
+    img_original = Image.open(img_name)
+    return img_original
+
+def edge_detection(img_name):
+    img_original = img_name
+
+    # Kernel de matriz (3X3)
+    m = (3,3)
+    # kernel de 3x3
+    mk = [-1, -1, -1, -1, 8, -1, -1, -1, -1]
+    # Scala
+    scale = 1
+    # offset
+    offset = 0
+    
+    # Criação do Kernel
+    kernel = ImageFilter.Kernel(m, mk, scale, offset)
+
+    # Aplicação do kernel/mascara
+    img_filtrada = img_original.filter(kernel)
+
+    img_filtrada.show()
+    img_original.show()
+
+    return img_filtrada
+
+def blur_filter(img_name):
+    # img_original  = Image.open(img_name)
+    img_original = img_name
+
+    img_filtrada = img_original.filter(ImageFilter.GaussianBlur(2))
+    img_filtrada.show()
+
+    return img_filtrada
 
 if __name__ == '__main__':
 
-    img = 'assets\input\loli.jpg'
+    img = 'assets\input\digital_real.jpg'
     # padronizar_imagem(img)
-    filtro_de_gabro(img)
+    # filtro_de_gabro(img)
 
+    op_img = open_img(img)
+    edge = edge_detection(op_img)
+    blur = blur_filter(edge)
+    edge = edge_detection(blur)
     
     cv.waitKey(0)
     cv.destroyAllWindows()
