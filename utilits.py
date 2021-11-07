@@ -49,10 +49,28 @@ def open_img(img_name):
 def edge_detection(img_name):
     img_original = img_name
 
+    # Converter a imagem para tons de cinza
+    img_original = img_original.convert('L')
+
     # Kernel de matriz (3X3)
     m = (3,3)
     # kernel de 3x3
-    mk = [-1, -1, -1, -1, 8, -1, -1, -1, -1]
+    mk = [
+          -1, -1, -1,
+          -1,  8, -1,
+          -1, -1, -1
+          ]
+    # mk = [
+    #       -1,  0, 1,
+    #       -2,  0, 2,
+    #       -1, -0, 1
+    #       ]
+    mk = [
+          1,  2, 1,
+          0,  0, 2,
+          -1, -2, -1
+          ]
+
     # Scala
     scale = 1
     # offset
@@ -80,14 +98,14 @@ def blur_filter(img_name):
 
 if __name__ == '__main__':
 
-    img = 'assets\input\digital_real.jpg'
+    img = 'assets\input\\'+'rua.jpg'
     # padronizar_imagem(img)
     # filtro_de_gabro(img)
 
     op_img = open_img(img)
     edge = edge_detection(op_img)
-    blur = blur_filter(edge)
-    edge = edge_detection(blur)
+    # blur = blur_filter(edge)
+    # edge = edge_detection(blur)
     
     cv.waitKey(0)
     cv.destroyAllWindows()
