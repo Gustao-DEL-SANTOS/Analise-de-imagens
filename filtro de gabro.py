@@ -109,5 +109,6 @@ out = Gabor_process(img)
 
 cv2.imshow("original", img2)
 cv2.imshow("result", out)
+cv2.imwrite('REsultado_Gabor.jpg', out)
 cv2.waitKey(0)
 cv2.destroyAllWindows()

@@ -57,7 +57,7 @@ def edge_detection(img_name):
     # kernel de 3x3
     mk = [
           -1, -1, -1,
-          -1,  8, -1,
+          -1,  8, -1, # Filtro laplaciano
           -1, -1, -1
           ]
     # mk = [
