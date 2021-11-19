@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-img = cv2.imread('fingerprint.png', 0)# 0 = grayscale
+img = cv2.imread('digital_b.jpg', 0)# 0 = grayscale
 retval, orig_thresh = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY)
 bin_thresh = (orig_thresh == 0).astype(int)
 
