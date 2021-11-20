@@ -1,15 +1,11 @@
-import os
 from skimage.morphology import skeletonize
 from skimage import data
-import skimage
-from skimage import io
 import matplotlib.pyplot as plt
 from skimage.util import invert
 
 # Invert the horse image
 image = invert(data.horse())
-f = os.path.join(skimage.data_dir, 'C:/Users/Gusta/OneDrive/Área de Trabalho/Analise de imagens/fingerprint.png') 
-image = io.imread(f)
+
 
 # perform skeletonization
 skeleton = skeletonize(image)
