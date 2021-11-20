@@ -43,7 +43,7 @@ border-radius:20px;</string>
      <string>Entrar</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="btn_cadastro">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -131,7 +131,7 @@ border:none;</string>
      <string>Login</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QLineEdit" name="txt_user">
     <property name="geometry">
      <rect>
       <x>110</x>
@@ -173,7 +173,7 @@ background-color: rgb(255, 255, 255);</string>
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
+   <widget class="QPushButton" name="btn_digital">
     <property name="geometry">
      <rect>
       <x>180</x>
